@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
@@ -261,7 +261,7 @@ export function DashboardList({ initialDemos }: { initialDemos: DemoItem[] }) {
                     <TableCell className="text-text-muted text-xs font-mono">
                       <span className="flex items-center gap-1.5">
                         <Clock className="h-3.5 w-3.5 opacity-50 shrink-0" />
-                        {new Date(d.updatedAt).toLocaleString()}
+                        {d.updatedAt ? String(d.updatedAt) : "—"}
                       </span>
                     </TableCell>
 

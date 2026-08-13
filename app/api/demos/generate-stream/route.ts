@@ -99,7 +99,7 @@ export async function POST(req: Request) {
         // Step 5: LLM Script Synthesis
         sendProgress(
           5,
-          "Synthesizing structured demo script via Gemini AI",
+          "Synthesizing structured demo script",
           "Generating step-by-step narration, UI actions, targets, and expected outcomes..."
         );
         const generation = await generateScript(pages, focus, demoId);

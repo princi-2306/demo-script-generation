@@ -41,7 +41,7 @@ const STEPS_LIST: ProgressStep[] = [
   { id: 2, label: "Chunking Content & Generating Vector Embeddings", detail: "Creating dense vectors using Gemini text-embedding-004..." },
   { id: 3, label: "Indexing Knowledge Base in MongoDB", detail: "Persisting vector chunks into database knowledge base..." },
   { id: 4, label: "Querying Vector Knowledge Base (RAG Retrieval)", detail: "Retrieving top relevant context matching demo focus..." },
-  { id: 5, label: "Synthesizing Structured Demo Script via Gemini AI", detail: "Drafting step narration, UI targets, and expected outcomes..." },
+  { id: 5, label: "Synthesizing Structured Demo Script", detail: "Drafting step narration, UI targets, and expected outcomes..." },
   { id: 6, label: "Script Complete!", detail: "Redirecting to interactive script editor..." },
 ];
 
@@ -471,7 +471,7 @@ export default function NewDemoPage() {
               ) : (
                 <>
                   <Sparkles className="h-5 w-5 fill-current" />
-                  <span>Build Demo Script with Gemini RAG</span>
+                  <span>Build Demo Script</span>
                 </>
               )}
             </Button>
@@ -492,9 +492,6 @@ export default function NewDemoPage() {
                     Building Demo Script
                   </h3>
                 </div>
-                <Badge variant="default" className="font-mono text-xs">
-                  RAG Pipeline Active
-                </Badge>
               </div>
 
               <div className="space-y-3">
