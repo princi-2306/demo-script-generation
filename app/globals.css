@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+:root {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+
+  --card: 240 5.9% 10%;
+  --card-foreground: 0 0% 98%;
+
+  --popover: 240 5.9% 10%;
+  --popover-foreground: 0 0% 98%;
+
+  --primary: 38 92% 50%;
+  --primary-foreground: 240 5.9% 10%;
+
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --ring: 38 92% 50%;
+
+  --radius: 0.5rem;
+
+  --ink: #09090b;
+  --surface: #18181b;
+  --surface-raised: #27272a;
+  --hairline: #27272a;
+  --text: #f4f4f5;
+  --text-muted: #a1a1aa;
+  --cue: #f59e0b;
+  --cue-dim: #78350f;
+  --verified: #10b981;
+  --edited: #6366f1;
+  --danger: #ef4444;
+}
+
+@theme inline {
+  --color-background: var(--ink);
+  --color-foreground: var(--text);
+  --color-card: var(--surface);
+  --color-card-foreground: var(--text);
+  --color-popover: var(--surface-raised);
+  --color-popover-foreground: var(--text);
+  --color-primary: var(--cue);
+  --color-primary-foreground: var(--ink);
+  --color-secondary: var(--surface-raised);
+  --color-secondary-foreground: var(--text);
+  --color-muted: var(--surface-raised);
+  --color-muted-foreground: var(--text-muted);
+  --color-accent: var(--edited);
+  --color-accent-foreground: var(--text);
+  --color-destructive: var(--danger);
+  --color-destructive-foreground: var(--text);
+  --color-border: var(--hairline);
+  --color-input: var(--hairline);
+  --color-ring: var(--cue);
+
+  --color-ink: #09090b;
+  --color-surface: #18181b;
+  --color-surface-raised: #27272a;
+  --color-hairline: #27272a;
+  --color-text: #f4f4f5;
+  --color-text-muted: #a1a1aa;
+  --color-cue: #f59e0b;
+  --color-cue-dim: #78350f;
+  --color-verified: #10b981;
+  --color-edited: #6366f1;
+  --color-danger: #ef4444;
+
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background-color: #09090b;
+  color: #f4f4f5;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+.cue-dot {
+  position: relative;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  flex-shrink: 0;
+}
+
+.cue-dot.is-live::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 9999px;
+  background: inherit;
+  opacity: 0.4;
+  animation: cue-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes cue-pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+  70% {
+    transform: scale(2.1);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2.1);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cue-dot.is-live::after {
+    animation: none;
+  }
+}
+
+::selection {
+  background: var(--cue);
+  color: var(--ink);
+}
