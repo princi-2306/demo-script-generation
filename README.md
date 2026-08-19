@@ -8,7 +8,7 @@ Built for **Omnisavant**'s autonomous B2B sales demo pipeline.
 
 ## 🏗️ End-to-End System Architecture & Flowchart
 
-```
+```mermaid
 flowchart TD
     subgraph S1["1. Document Ingestion & Scraping"]
         UserUpload["User Uploads PDF / TXT / MD / JSON or URL"] -->|POST multipart/form-data| ApiScrape["/api/scrape Endpoint"]
@@ -110,6 +110,12 @@ flowchart TD
 
 3. **Script Versioning**:
    - Every saved edit increments the `version` integer, enabling running agents to detect when a script was modified mid-demo.
+
+---
+
+## 📄 Documentation
+
+- [Decision Framework](./Decision.md) — How decisions are made in the demo scripting pipeline, and why each approach was chosen
 
 ---
 

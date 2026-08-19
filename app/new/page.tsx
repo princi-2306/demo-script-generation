@@ -244,10 +244,6 @@ export default function NewDemoPage() {
 
       <main className="mx-auto w-full max-w-4xl flex-1 px-6 py-8">
         <div className="mb-6">
-          <Badge variant="default" className="mb-2 gap-1.5">
-            <Sparkles className="h-3 w-3" />
-            <span>AI Script Generator</span>
-          </Badge>
           <h1 className="font-display text-3xl font-bold tracking-tight text-text">
             Generate a Demo Script with RAG
           </h1>
